@@ -1,0 +1,71 @@
+<section class="py-5 d-flex justify-content-center" style="display: grid; gap: 40px">
+  <h1>Update Item</h1>
+  <form (submit)="onSubmit()" [formGroup]="f2" style="display: grid; gap: 20px">
+    <div>
+      <label for="username" style="padding-right: 12px">Username</label>
+      <input type="text" formControlName="username" />
+      <p *ngIf="f2.get('username')?.errors" style="color: red; display: grid; gap: 6px">
+        <small *ngIf="f2.get('username')?.errors?.['required']">This field is required</small>
+        <small *ngIf="f2.get('username')?.errors?.['minlength']">This field must be at least 3 characters</small>
+        <small *ngIf="f2.get('username')?.errors?.['maxlength']">This field must be at most 10 characters</small>
+      </p>
+    </div>
+
+    <div>
+      <label for="password" style="padding-right: 12px">Password</label>
+      <input type="password" formControlName="password" />
+      <p *ngIf="f2.get('password')?.errors" style="color: red; display: grid; gap: 6px">
+        <small *ngIf="f2.get('password')?.errors?.['required']">This field is required</small>
+        <small *ngIf="f2.get('password')?.errors?.['minlength']">This field must be at least 3 characters</small>
+        <small *ngIf="f2.get('password')?.errors?.['maxlength']">This field must be at most 10 characters</small>
+      </p>
+    </div>
+
+    <div>
+      <label for="confirmation" style="padding-right: 12px">Confirmation</label>
+      <input type="password" formControlName="confirmation" />
+      <p *ngIf="f2.get('confirmation')?.errors" style="color: red; display: grid; gap: 6px">
+        <small *ngIf="f2.get('confirmation')?.errors?.['required']">This field is required</small>
+        <small *ngIf="f2.get('confirmation')?.errors?.['minlength']">This field must be at least 3 characters</small>
+        <small *ngIf="f2.get('confirmation')?.errors?.['maxlength']">This field must be at most 10 characters</small>
+      </p>
+    </div>
+
+    <div>
+      <label for="country" style="padding-right: 12px">Country</label>
+      <input type="text" formControlName="country" />
+      <p *ngIf="f2.get('country')?.errors" style="color: red; display: grid; gap: 6px">
+        <small *ngIf="f2.get('country')?.errors?.['required']">This field is required</small>
+        <small *ngIf="f2.get('country')?.errors?.['minlength']">This field must be at least 3 characters</small>
+        <small *ngIf="f2.get('country')?.errors?.['maxlength']">This field must be at most 10 characters</small>
+      </p>
+    </div>
+
+    <div>
+      <label for="email" style="padding-right: 12px">Email</label>
+      <input type="email" formControlName="email" />
+      <p *ngIf="f2.get('email')?.errors" style="color: red; display: grid; gap: 6px">
+        <small *ngIf="f2.get('email')?.errors?.['required']">This field is required</small>
+        <small *ngIf="f2.get('email')?.errors?.['minlength']">This field must be at least 3 characters</small>
+        <small *ngIf="f2.get('email')?.errors?.['maxlength']">This field must be at most 10 characters</small>
+      </p>
+    </div>
+
+    <div>
+      <label for="sexe" style="padding-right: 12px">Sexe</label>
+      <input type="text" formControlName="sexe" />
+      <p *ngIf="f2.get('sexe')?.errors" style="color: red; display: grid; gap: 6px">
+        <small *ngIf="f2.get('sexe')?.errors?.['required']">This field is required</small>
+        <small *ngIf="f2.get('sexe')?.errors?.['minlength']">This field must be at least 3 characters</small>
+        <small *ngIf="f2.get('sexe')?.errors?.['maxlength']">This field must be at most 10 characters</small>
+      </p>
+    </div>
+
+    <div>
+      <label for="terms" style="padding-right: 12px">Terms</label>
+      <input type="checkbox" formControlName="terms" />
+    </div>
+
+    <button [disabled]="f2.status === 'INVALID'">Submit</button>
+  </form>
+</section>

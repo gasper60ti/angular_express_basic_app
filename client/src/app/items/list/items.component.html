@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let item of data">
+    <h3>{{ item.username }}</h3>
+    <p>{{ item.password }}</p>
+    <p>{{ item.confirmation }}</p>
+    <p>{{ item.country }}</p>
+    <p>{{ item.email }}</p>
+    <p>{{ item.sexe }}</p>
+    <p>{{ item.terms }}</p>
+    <button (click)="delete(item._id)">Delete</button>
+
+    <a [routerLink]="'/client/update/' + item._id">Edit</a>
+  </li>
+</ul>
